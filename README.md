@@ -35,7 +35,4 @@ Abra os arquivos `.html` diretamente no seu navegador para visualizar os exercí
 ## 📬 Entre em contato:
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniella-trindade-2b31ba357)  
-[![Gmail](https://img.shields.io/badge/E--mail-danifernandestrindade@gmail.com-red?style=flat&logo=gmail&logoColor=white)](mailto:danifernandestrindade@gmail.co
-
-
----
+[![Gmail](https://img.shields.io/badge/E--mail-danifernandestrindade@gmail.com-red?style=flat&logo=gmail&logoColor=white)](mailto:danifernandestrindade@gmail.com)
