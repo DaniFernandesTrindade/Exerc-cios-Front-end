@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Votação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Escolha seu candidato!</h2>
+
+  <div class="candidatos" id="areaVotacao">
+    <div class="candidato" onclick="votar('candidato1')" id="btn1">
+      <img src="img1.jpg" alt="Candidato 1">
+    </div>
+    <div class="candidato" onclick="votar('candidato2')" id="btn2">
+      <img src="img2.jpg" alt="Candidato 2">
+    </div>
+    <div class="candidato" onclick="votar('candidato3')" id="btn3">
+      <img src="img3.jpg" alt="Candidato 3">
+    </div>
+    <div class="candidato" onclick="votar('candidato4')" id="btn4">
+      <img src="img4.jpg" alt="Candidato 4">
+    </div>
+    <div class="candidato" onclick="votar('candidato5')" id="btn5">
+      <img src="img5.jpg" alt="Candidato 5">
+    </div>
+    <div class="candidato" onclick="votar('candidato6')" id="btn6">
+      <img src="img6.jpg" alt="Candidato 6">
+    </div>
+    <div id="overlay">VOTAÇÃO ENCERRADA</div>
+  </div>
+
+  <button onclick="encerrarVotacao()" id="encerrar">Encerrar Votação</button>
+
+  <div class="resultados" id="resultados" style="display: none;">
+    <h3>Top 3 Candidatos:</h3>
+    <div class="candidatos" id="top3"></div>
+  </div>
+
+  <p id="mensagem"></p>
+
+  <script>
+    let votos = {
+      candidato1: 0,
+      candidato2: 0,
+      candidato3: 0,
+      candidato4: 0,
+      candidato5: 0,
+      candidato6: 0,
+    };
+
+    const imagens = {
+      candidato1: "img1.jpg",
+      candidato2: "img2.jpg",
+      candidato3: "img3.jpg",
+      candidato4: "img4.jpg",
+      candidato5: "img5.jpg",
+      candidato6: "img6.jpg",
+    };
+
+    let votacaoEncerrada = false;
+
+    function votar(candidato) {
+      if (!votacaoEncerrada) {
+        votos[candidato]++;
+      }
+    }
+
+    function encerrarVotacao() {
+      votacaoEncerrada = true;
+
+      // Desativa os botões
+      for (let i = 1; i <= 6; i++) {
+        document.getElementById('btn' + i).style.pointerEvents = 'none';
+      }
+
+      document.getElementById('encerrar').disabled = true;
+      document.getElementById('mensagem').innerText = "Votação encerrada. Obrigado por participar!";
+      document.getElementById('overlay').style.display = 'flex';
+
+      mostrarTop3();
+    }
+
+    function mostrarTop3() {
+      const totalVotos = Object.values(votos).reduce((a, b) => a + b, 0);
+
+      const ordenado = Object.entries(votos)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3); // Pega os 3 primeiros
+
+      let posicoes = ["1º Lugar", "2º Lugar", "3º Lugar"];
+      let top3Div = document.getElementById("top3");
+      top3Div.innerHTML = "";
+
+      ordenado.forEach(([nome, qtd], i) => {
+        let porcentagem = totalVotos > 0 ? ((qtd / totalVotos) * 100).toFixed(1) : 0;
+
+        let card = `
+          <div class="candidato">
+            <img src="${imagens[nome]}" alt="${nome}">
+            <strong>${posicoes[i]}</strong>
+            <p>${porcentagem}% dos votos</p>
+          </div>
+        `;
+        top3Div.innerHTML += card;
+      });
+
+      document.getElementById("resultados").style.display = "block";
+    }
+  </script>
+</body>
+</html>
