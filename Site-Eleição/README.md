@@ -31,7 +31,19 @@ O arquivo `style.css` é responsável por toda a parte visual do sistema:
 - Overlay de votação encerrada  
 - Exibição dos resultados com destaque para o Top 3
 
+---
+
+## 📬 Entre em contato:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniella-trindade-2b31ba357)  
+[![Gmail](https://img.shields.io/badge/E--mail-danifernandestrindade@gmail.com-red?style=flat&logo=gmail&logoColor=white)](mailto:danifernandestrindade@gmail.com)
+
+---
+
 O CSS foi vinculado ao HTML com a seguinte linha dentro da tag `<head>`:
 
 ```html
 <link rel="stylesheet" href="style.css">
+
+---
+
