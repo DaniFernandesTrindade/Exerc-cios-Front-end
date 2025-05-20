@@ -1,0 +1,142 @@
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Estilo do título */
+h2, h3 {
+    color: #333;
+}
+
+/* Estilo dos candidatos */
+.candidatos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.candidato {
+    cursor: pointer;
+    transition: transform 0.3s;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    border: 3px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.candidato:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
+}
+
+/* Imagem dos candidatos */
+.candidato img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Estilo dos resultados */
+.resultados {
+    margin-top: 30px;
+}
+
+/* Estilo do botão de encerrar */
+#encerrar {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#encerrar:disabled {
+    background-color: gray;
+    cursor: default;
+}
+
+/* Estilo da mensagem após a votação */
+#mensagem {
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
+}
+
+/* Estilo de sobreposição quando a votação é encerrada */
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 10;
+}
+
+/* Estilo para o top 3 candidatos */
+#top3 {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+#top3 .candidato {
+    width: 200px; /* Aumenta o tamanho do cartão */
+    height: 250px;
+    background-color: #e6e6e6; /* Fundo mais suave para os top 3 */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    border: 2px solid #ccc;
+}
+
+#top3 .candidato img {
+    width: 120px; /* Aumenta o tamanho da imagem */
+    height: 120px;
+}
+
+#top3 .candidato strong {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+}
+
+#top3 .candidato p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Estilo especial para 1º, 2º e 3º lugar */
+#top3 .candidato:nth-child(1) {
+    background-color: gold; /* Ouro para o primeiro lugar */
+}
+
+#top3 .candidato:nth-child(2) {
+    background-color: silver; /* Prata para o segundo lugar */
+}
+
+#top3 .candidato:nth-child(3) {
+    background-color: #cd7f32; /* Bronze para o terceiro lugar */
+}
